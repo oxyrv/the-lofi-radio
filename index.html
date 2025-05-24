@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>THE LOFI RADIO</title>
+        <link rel="stylesheet" href="./src/index.css">
+        <meta content="The Lofi Radio" property="og:title" />
+        <meta content="24/7 Lofi Radio!" property="og:description" />
+        <!--<meta content="https://embed.com/this-is-the-site-url" property="og:url" />-->
+        <meta content="https://cdn.discordapp.com/attachments/1354538864022388929/1354538943474958346/embed-icon.png" property="og:image" />
+        <meta content="#ff1100" data-react-helmet="true" name="theme-color" />
+        <style>
+            .player-container {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                background: #222;
+                padding: 15px;
+                border-radius: 10px;
+                color: white;
+                width: 90%; /* Instead of fixed 1350px */
+                max-width: 600px; /* Prevents it from being too large */
+                position: fixed;
+                bottom: 20px; /* Keeps it at the bottom */
+                left: 50%;
+                transform: translateX(-50%);
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            }
+
+            /* Play/Pause Button */
+            #play-pause-btn {
+                background: none;
+                border: none;
+                color: white;
+                font-size: 24px;
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            /* Progress Bar */
+            #progress-bar {
+                flex: 1;
+                width: 100%;
+                height: 5px;
+                background: #555;
+                border-radius: 5px;
+                outline: none;
+            }
+
+            /* Song Name */
+            #song-name {
+                flex: 2;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            /* Time Display */
+            #current-time, #total-time {
+                font-size: 14px;
+            }
+
+            #time-separator {
+                margin: 0 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="player" class="player-container">
+            <span class="exo-2-font" id="song-name">Loading...</span>
+            <button id="play-pause-btn">▶</button>
+            <span id="current-time">0:00</span><span id="time-separator"> / </span><span id="total-time">0:00</span>
+            
+            <div id="volume-container">
+                <span id="volume-icon">🔊</span>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+            </div>            
+        </div>        
+        <script type="text/javascript" src="./src/player.js" defer></script>
+        <script type="text/javascript" src="./src/index.js"></script>
+    </body>
+</html>

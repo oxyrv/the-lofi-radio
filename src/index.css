@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+
+body {
+    background-color: #3b3b3b;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('./img/bg1.gif') no-repeat center center fixed; 
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.exo-2-font {
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: auto;
+    font-style: normal;
+}
+
+#volume-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#volume-icon {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#volume-slider {
+    width: 50px;
+    appearance: none;
+    background: #555;
+    height: 5px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+#volume-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+@keyframes popup_entrance {
+	0% {
+		transform: scale(0);
+		transform-origin: 50% 100%;
+	}
+
+	100% {
+		transform: scale(1);
+		transform-origin: 50% 100%;
+	}
+}

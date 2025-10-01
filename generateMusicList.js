@@ -18,7 +18,7 @@ try {
     .sort();
 
   fs.writeFileSync(outPath, JSON.stringify(files, null, 2));
-  console.log("✅ music.json généré avec", files.length, "fichier(s). ->", outPath);
+  console.log("✅ music.json généré avec", files.length, "fichier(s). ->", outPath, "Content:", JSON.stringify(files, null, 2));
 } catch (err) {
   console.error("Erreur génération music.json :", err);
   try { fs.writeFileSync(outPath, JSON.stringify([], null, 2)); } catch {}

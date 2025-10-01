@@ -22,17 +22,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function loadMusicFiles() {
         try {
-            const response = await fetch(musicDir);
-            const text = await response.text();
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(text, "text/html");
-            playlist = Array.from(doc.querySelectorAll("a"))
-                .map(a => a.href)
-                .filter(href => href.endsWith(".mp3"))
-                .map(href => new URL(href).pathname.replace(musicDir, ""));
-            
+            const response = await fetch("/src/music.json");
+            if (!response.ok) {
+                console.error("Impossible de charger src/music.json :", response.status);
+                return;
+            }
+            const files = await response.json(); // ["song1.mp3","song2.mp3", ...]
+            playlist = Array.isArray(files) ? files.filter(f => f.endsWith(".mp3")) : [];
+
             if (playlist.length === 0) {
-                console.error("No music files found.");
+                console.error("No music files found (playlist vide).");
                 return;
             }
 
@@ -42,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Error loading music files:", error);
         }
     }
+
 
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
@@ -130,4 +130,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     loadMusicFiles();
+
 });

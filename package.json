@@ -1,0 +1,9 @@
+{
+  "name": "the-lofi-radio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "prebuild": "node generateMusicList.js",
+    "build": "echo \"noop build\""
+  }
+}

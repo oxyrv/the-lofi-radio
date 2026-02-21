@@ -10,4 +10,4 @@
 <h2 align="center">CONTRIBUTORS</h2>
 <h3 align="center"><strong>Owner/Original dev and creator:</strong> <a href="https://github.com/oxyrv" target="_blank">oxyru(me)</a></h3>
 
-<h3 align="center"><strong>Owner/Dev:</strong> <a href="https://github.com/potaaatoo" target="_blank">potaaato</a></h3>
+<h3 align="center"><strong>Owner/Dev:</strong> <a href="https://github.com/Ovrflowdev" target="_blank">Ovrflow.dev</a></h3>

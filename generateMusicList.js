@@ -1,4 +1,3 @@
-// generateMusicList.js  (CommonJS, pas besoin de "type": "module")
 const fs = require("fs");
 const path = require("path");
 
